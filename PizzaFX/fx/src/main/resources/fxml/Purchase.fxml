@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.norbisan.jpa.pizzafx.fx.controller.PurchaseController">
+	<children>
+		<SplitPane dividerPositions="0.7573221757322176" orientation="VERTICAL" prefHeight="480.0" prefWidth="640.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+			<items>
+				<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+					<children>
+						<Button fx:id="btLogout" layoutX="584.0" mnemonicParsing="false" onAction="#btLogoutAction" text="Kilépés" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+						<TableView fx:id="tvAllTable" layoutY="26.0" prefHeight="276.0" prefWidth="638.0" AnchorPane.bottomAnchor="31.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="26.0">
+							<columns>
+								<TableColumn editable="false" prefWidth="145.0" text="Név">
+									<cellValueFactory>
+										<PropertyValueFactory property="name" />
+									</cellValueFactory>
+								</TableColumn>
+								<TableColumn editable="false" minWidth="5.0" prefWidth="378.0" text="Feltétek">
+									<cellValueFactory>
+										<PropertyValueFactory property="toppings" />
+									</cellValueFactory>
+								</TableColumn>
+								<TableColumn editable="false" prefWidth="113.0" text="Ár">
+									<cellValueFactory>
+										<PropertyValueFactory property="price" />
+									</cellValueFactory>
+								</TableColumn>
+							</columns>
+						</TableView>
+						<HBox alignment="BOTTOM_CENTER" layoutY="305.0" prefHeight="30.0" prefWidth="638.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+							<children>
+								<Button fx:id="btAdd" mnemonicParsing="false" onAction="#btAddAction" text="Hozzáad" />
+							</children>
+							<padding>
+								<Insets bottom="2.0" />
+							</padding>
+						</HBox>
+					</children>
+				</AnchorPane>
+				<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+					<children>
+						<TableView fx:id="tvSelectedTable" prefHeight="202.0" prefWidth="638.0" AnchorPane.bottomAnchor="31.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+							<columns>
+								<TableColumn editable="false" prefWidth="145.0" text="Név">
+									<cellValueFactory>
+										<PropertyValueFactory property="name" />
+									</cellValueFactory>
+								</TableColumn>
+								<TableColumn editable="false" prefWidth="378.0" text="Feltétek">
+									<cellValueFactory>
+										<PropertyValueFactory property="toppings" />
+									</cellValueFactory>
+								</TableColumn>
+								<TableColumn editable="false" prefWidth="113.0" text="Ár">
+									<cellValueFactory>
+										<PropertyValueFactory property="price" />
+									</cellValueFactory>
+								</TableColumn>
+							</columns>
+						</TableView>
+						<HBox alignment="CENTER" layoutY="193.0" prefHeight="30.0" prefWidth="638.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+							<children>
+								<Button fx:id="btDelete" mnemonicParsing="false" onAction="#btDeleteAction" text="Törlés">
+									<HBox.margin>
+										<Insets right="5.0" />
+									</HBox.margin>
+								</Button>
+								<Button fx:id="btNext" mnemonicParsing="false" onAction="#btNextAction" text="Tovább" />
+							</children>
+						</HBox>
+					</children>
+				</AnchorPane>
+			</items>
+		</SplitPane>
+	</children>
+</AnchorPane>

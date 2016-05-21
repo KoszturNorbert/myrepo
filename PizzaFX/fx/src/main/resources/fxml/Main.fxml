@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.norbisan.jpa.pizzafx.fx.controller.MainController">
+	<children>
+		<TableView fx:id="tvTabla" layoutX="1.0" layoutY="30.0" maxWidth="1.7976931348623157E308" prefHeight="450.0" prefWidth="640.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+			<columns>
+				<TableColumn prefWidth="140.0" text="Név">
+					<cellValueFactory>
+						<PropertyValueFactory property="name" />
+					</cellValueFactory>
+				</TableColumn>
+				<TableColumn editable="false" prefWidth="373.0" text="Feltétek">
+					<cellValueFactory>
+						<PropertyValueFactory property="toppings" />
+					</cellValueFactory>
+				</TableColumn>
+				<TableColumn editable="false" prefWidth="124.0" text="Ár">
+					<cellValueFactory>
+						<PropertyValueFactory property="price" />
+					</cellValueFactory>
+				</TableColumn>
+			</columns>
+		</TableView>
+		<Button fx:id="btLogin" layoutX="581.0" layoutY="2.0" mnemonicParsing="false" onAction="#btLoginAction" text="Belépés" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="2.0" />
+	</children>
+</AnchorPane>

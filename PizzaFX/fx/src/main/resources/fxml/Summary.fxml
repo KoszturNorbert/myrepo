@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.norbisan.jpa.pizzafx.fx.controller.SummaryController">
+	<children>
+		<TableView fx:id="tvTable" layoutX="25.0" layoutY="14.0" prefHeight="212.0" prefWidth="591.0">
+			<columns>
+				<TableColumn editable="false" prefWidth="147.0" text="Név">
+					<cellValueFactory>
+						<PropertyValueFactory property="name" />
+					</cellValueFactory>
+				</TableColumn>
+				<TableColumn editable="false" prefWidth="326.0" text="Feltétek">
+					<cellValueFactory>
+						<PropertyValueFactory property="toppings" />
+					</cellValueFactory>
+				</TableColumn>
+				<TableColumn editable="false" prefWidth="115.0" text="Ár">
+					<cellValueFactory>
+						<PropertyValueFactory property="price" />
+					</cellValueFactory>
+				</TableColumn>
+			</columns>
+		</TableView>
+		<Separator layoutX="14.0" layoutY="228.0" prefHeight="16.0" prefWidth="640.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="232.0" />
+		<Label layoutX="46.0" layoutY="366.0" text="Szállítási díj:" />
+		<Label layoutX="50.0" layoutY="426.0" text="Végösszeg:" />
+		<Label layoutX="40.0" layoutY="248.0" text="Szállítási cím:" underline="true" />
+		<Label layoutX="40.0" layoutY="276.0" text="Irányítószám:" />
+		<Label layoutX="77.0" layoutY="306.0" text="Város:" />
+		<Label layoutX="32.0" layoutY="336.0" text="Utca, házszám:" />
+		<TextField fx:id="tfPostCode" editable="false" layoutX="122.0" layoutY="272.0" prefHeight="25.0" prefWidth="70.0" />
+		<TextField fx:id="tfCity" editable="false" layoutX="122.0" layoutY="302.0" prefHeight="25.0" prefWidth="149.0" />
+		<TextField fx:id="tfStreet" editable="false" layoutX="122.0" layoutY="332.0" />
+		<TextField fx:id="tfHouse" editable="false" layoutX="281.0" layoutY="332.0" prefHeight="25.0" prefWidth="70.0" />
+		<TextField fx:id="tfShippingCost" alignment="CENTER_RIGHT" editable="false" layoutX="122.0" layoutY="362.0" />
+      <TextField fx:id="tfDiscount" alignment="CENTER_RIGHT" editable="false" layoutX="122.0" layoutY="392.0" />
+		<TextField fx:id="tfTotalPrice" alignment="CENTER_RIGHT" editable="false" layoutX="122.0" layoutY="422.0" />
+      <TextField fx:id="tfRoundingAmount" alignment="CENTER_RIGHT" editable="false" layoutX="122.0" layoutY="452.0" />
+		<Button fx:id="btOrder" layoutX="145.0" layoutY="500.0" mnemonicParsing="false" onAction="#btOrderAction" text="Megrendelés" />
+		<Button fx:id="btCalcel" layoutX="441.0" layoutY="500.0" mnemonicParsing="false" onAction="#btCalcelAction" text="Mégse" />
+		<Label layoutX="281.0" layoutY="366.0" text="Ft" />
+		<Label layoutX="281.0" layoutY="426.0" text="Ft" />
+      <Label layoutX="40.0" layoutY="396.0" text="Kedvezmény:" />
+      <Label layoutX="281.0" layoutY="396.0" text="Ft" />
+      <Label layoutX="59.0" layoutY="456.0" text="Kerekítés:" />
+      <Label layoutX="281.0" layoutY="456.0" text="Ft" />
+	</children>
+</AnchorPane>
